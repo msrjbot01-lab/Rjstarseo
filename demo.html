@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FE24T2387"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6FE24T2387');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Produk & Live Demo - RJSEO</title>
+    <meta name="description" content="Eksplorasi langsung fungsionalitas, tampilan, dan performa dari berbagai solusi digital, sistem manajemen, undangan elektronik, dan landing page yang kami kembangkan.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Sample Produk & Live Demo - RJSEO">
+    <meta property="og:description" content="Eksplorasi langsung fungsionalitas, tampilan, dan performa dari berbagai solusi digital, sistem manajemen, undangan elektronik, dan landing page yang kami kembangkan.">
+    <meta property="og:image" content="preview-v2.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="favicon.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-[#030712] text-slate-100 font-sans selection:bg-blue-600 selection:text-white bg-grid-pattern relative">
+
+    <!-- Efek Background Glow Mewah -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-tr from-blue-600/20 via-indigo-600/10 to-transparent blur-[140px] pointer-events-none rounded-full"></div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-[#030712]/85 backdrop-blur-2xl border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="transition-transform hover:scale-105"><img src="logo.png" alt="RJSEO Logo" class="h-16 w-auto"></a>
+            </div>
+            
+            <!-- Menu Navigasi Desktop -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300 items-center ml-auto">
+                <a href="index.html" class="hover:text-blue-400 transition">Beranda</a>
+                
+                <!-- Dropdown Layanan Desktop -->
+                <div class="relative group py-2">
+                    <button id="dropdown-btn" class="text-slate-300 hover:text-blue-400 transition flex items-center focus:outline-none">
+                        Pusat Layanan <i id="dropdown-icon" class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div id="dropdown-menu" class="absolute left-0 top-full pt-1 w-64 hidden group-hover:block z-50">
+                        <div class="bg-slate-900/95 backdrop-blur-2xl border border-slate-800 rounded-2xl shadow-2xl py-3">
+                            <a href="undangan-digital.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition font-medium">✨ Undangan Elektronik / Digital</a>
+                            <a href="landing-page.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Landing Page Profesional</a>
+                            <a href="pembuatan-aplikasi.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Pembuatan Aplikasi Kustom</a>
+                            <a href="bot-telegram.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Bot Telegram Otomatis</a>
+                            <a href="solusi-lainnya.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition border-t border-slate-800/80 mt-1 pt-2 font-medium">📁 Solusi Digital Lainnya</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="paket.html" class="hover:text-blue-400 transition">Paket & Solusi</a>
+                <a href="keunggulan.html" class="hover:text-blue-400 transition">Keunggulan</a>
+                <a href="demo.html" class="text-blue-400 font-semibold transition hover:text-blue-300">Demo & Sample</a>
+                <a href="kontak.html" class="hover:text-blue-400 transition">Kontak</a>
+            </nav>
+            
+            <!-- Tombol Hamburger Menu Mobile -->
+            <div class="flex items-center space-x-3 md:hidden ml-auto">
+                <button id="menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2.5 bg-slate-900/80 border border-slate-800 rounded-xl" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-2xl border-b border-slate-800 px-6 py-5 space-y-3 text-sm shadow-2xl">
+            <a href="index.html" class="block text-slate-300 hover:text-blue-400 py-1 transition">Beranda</a>
+            
+            <div class="border-t border-slate-800/80 pt-3 pb-1 text-slate-400 font-medium text-xs uppercase tracking-wider">Pusat Layanan Digital:</div>
+            <a href="undangan-digital.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition font-medium">&bull; ✨ Undangan Elektronik</a>
+            <a href="landing-page.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition">&bull; Landing Page Profesional</a>
+            <a href="pembuatan-aplikasi.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition">&bull; Pembuatan Aplikasi Kustom</a>
+            <a href="bot-telegram.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition">&bull; Bot Telegram Otomatis</a>
+            <a href="solusi-lainnya.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition font-medium">&bull; 📁 Solusi Digital Lainnya</a>
+
+            <div class="border-t border-slate-800/80 pt-3 space-y-2">
+                <a href="paket.html" class="block text-slate-300 hover:text-blue-400 py-1">Paket & Solusi</a>
+                <a href="keunggulan.html" class="block text-slate-300 hover:text-blue-400 py-1">Keunggulan</a>
+                <a href="demo.html" class="block text-blue-400 font-semibold py-1">Demo & Sample</a>
+                <a href="kontak.html" class="block text-slate-300 hover:text-blue-400 py-1">Kontak</a>
+            </div>
+
+            <!-- Tombol Kontak Cepat di dalam Menu Mobile -->
+            <div class="border-t border-slate-800/80 pt-4 flex gap-3">
+                <a href="https://api.whatsapp.com/send/?phone=94703550968&text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-lg shadow-green-600/30">
+                    <i class="fab fa-whatsapp mr-1"></i> WhatsApp
+                </a>
+                <a href="https://t.me/rjbotxt?text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="flex-1 bg-sky-500 hover:bg-sky-600 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-lg shadow-sky-500/30">
+                    <i class="fab fa-telegram-plane mr-1"></i> Telegram
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 text-center max-w-4xl mx-auto relative z-10" data-aos="fade-up">
+        <span class="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider border border-blue-500/20 mb-4 shadow-sm backdrop-blur-md">
+            Portofolio & Live Preview
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">Sample Produk & Live Demo</h1>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Eksplorasi langsung fungsionalitas, tampilan, dan performa dari berbagai solusi digital, undangan elektronik, dan sistem manajemen yang kami kembangkan.</p>
+    </section>
+
+    <!-- Daftar Produk & Demo Grid (4 Kolom) -->
+    <section class="pb-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            
+            <!-- Card 1: Undangan Elektronik -->
+            <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <div class="bg-slate-950/80 p-4 border-b border-slate-800/80">
+                        <div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-inner">
+                            <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                                <source src="videodemoundangan.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-slate-700 text-[10px] text-blue-400 uppercase tracking-widest font-semibold">
+                                Preview Video
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold bg-amber-500/10 text-amber-400 px-3 py-1.5 rounded-full border border-amber-500/20">Undangan Digital</span>
+                        <h3 class="text-lg font-bold text-white mt-4 mb-2">Undangan Elektronik</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Contoh preview video undangan digital interaktif dan eksklusif untuk berbagai acara spesial Anda.</p>
+                        <div class="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-center justify-between">
+                            <span class="truncate pr-2 text-blue-400">undangan-rjseo.pages.dev</span>
+                            <i class="fas fa-globe text-blue-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://undangan-rjseo.pages.dev/" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center py-3.5 rounded-xl font-semibold transition text-sm shadow-lg shadow-blue-600/30">
+                        <i class="fas fa-external-link-alt mr-2"></i> Kunjungi Live Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Panel Resto -->
+            <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <div class="bg-slate-950/80 p-4 border-b border-slate-800/80">
+                        <div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-inner flex items-center justify-center">
+                            <img src="panelrj.png" alt="Panel Resto" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold bg-blue-500/10 text-blue-400 px-3 py-1.5 rounded-full border border-blue-500/20">Sistem Admin</span>
+                        <h3 class="text-lg font-bold text-white mt-4 mb-2">Panel Manajemen Resto</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Dashboard admin lengkap untuk pengelolaan pesanan, menu, dan operasional restoran secara efisien.</p>
+                        <div class="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-400">
+                            <p>User: <b class="text-slate-200">demo</b> | Pass: <b class="text-slate-200">demo123</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://panel-rjresto.pages.dev" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center py-3.5 rounded-xl font-semibold transition text-sm shadow-lg shadow-blue-600/30">
+                        <i class="fas fa-external-link-alt mr-2"></i> Buka Panel Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Website Pemesanan Resto (SUDAH DIPERBAIKI) -->
+            <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+                <div>
+                    <div class="bg-slate-950/80 p-4 border-b border-slate-800/80">
+                        <div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-inner flex items-center justify-center">
+                            <img src="lprjresto.png" alt="Web Pemesanan Resto" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold bg-orange-500/10 text-orange-400 px-3 py-1.5 rounded-full border border-orange-500/20">Web Pemesanan Resto</span>
+                        <h3 class="text-lg font-bold text-white mt-4 mb-2">Website Pemesanan Resto</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Situs web interaktif pemesanan menu dan reservasi meja yang praktis untuk pelanggan restoran Anda.</p>
+                        <div class="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-center justify-between">
+                            <span class="truncate pr-2 text-blue-400">rjrestodemo.pages.dev</span>
+                            <i class="fas fa-globe text-blue-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://rjrestodemo.pages.dev" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center py-3.5 rounded-xl font-semibold transition text-sm shadow-lg shadow-blue-600/30">
+                        <i class="fas fa-external-link-alt mr-2"></i> Lihat Live Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Landing Page RJSEO (SUDAH DIPERBAIKI) -->
+            <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+                <div>
+                    <div class="bg-slate-950/80 p-4 border-b border-slate-800/80">
+                        <div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-inner">
+                            <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                                <source src="rjseo22.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-slate-700 text-[10px] text-blue-400 uppercase tracking-widest font-semibold">
+                                Preview Video
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold bg-emerald-500/10 text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-500/20">Landing Page</span>
+                        <h3 class="text-lg font-bold text-white mt-4 mb-2">Landing Page RJSEO</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Landing page profesional untuk mempromosikan produk, mengoptimalkan penawaran, dan meningkatkan konversi bisnis.</p>
+                        <div class="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-center justify-between">
+                            <span class="truncate pr-2 text-blue-400">rjseo.pages.dev</span>
+                            <i class="fas fa-globe text-blue-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="https://rjseo.pages.dev/" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center py-3.5 rounded-xl font-semibold transition text-sm shadow-lg shadow-blue-600/30">
+                        <i class="fas fa-external-link-alt mr-2"></i> Kunjungi Live Demo
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Floating CTA WhatsApp & Telegram di Sudut Kanan Bawah -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="https://api.whatsapp.com/send/?phone=94703550968&text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-green-600/50 transition-all hover:scale-110 active:scale-95" title="Chat WhatsApp">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="https://t.me/rjbotxt?text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="bg-sky-500 hover:bg-sky-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-sky-500/50 transition-all hover:scale-110 active:scale-95" title="Chat Telegram">
+            <i class="fab fa-telegram-plane text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#02040a] border-t border-slate-800/60 py-12 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center justify-center sm:justify-start space-x-3">
+                <img src="logo.png" alt="RJSEO Logo" class="h-14 w-auto">
+                <span class="text-slate-400">&copy; 2026 RJSEO. All rights reserved.</span>
+            </div>
+            <div class="flex space-x-6 text-slate-400">
+                <a href="index.html" class="hover:text-white transition">Beranda</a>
+                <a href="undangan-digital.html" class="hover:text-white transition">Undangan</a>
+                <a href="landing-page.html" class="hover:text-white transition">Landing Page</a>
+                <a href="demo.html" class="hover:text-white transition">Demo</a>
+                <a href="kontak.html" class="hover:text-white transition">Kontak</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript untuk Tombol Hamburger Mobile -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 50 });</script>
+</body>
+</html>

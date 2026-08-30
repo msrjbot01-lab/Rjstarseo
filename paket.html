@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FE24T2387"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6FE24T2387');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket & Solusi - RJSEO</title>
+    <meta name="description" content="Pilihan paket dan solusi pembuatan landing page, aplikasi, serta bot telegram profesional yang fleksibel sesuai kebutuhan bisnis Anda.">
+    
+    <link rel="icon" type="image/png" href="favicon.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-[#030712] text-slate-100 font-sans selection:bg-blue-600 selection:text-white bg-grid-pattern relative">
+
+    <!-- Efek Background Glow Mewah -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-tr from-blue-600/20 via-indigo-600/10 to-transparent blur-[140px] pointer-events-none rounded-full"></div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-[#030712]/85 backdrop-blur-2xl border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="transition-transform hover:scale-105"><img src="logo.png" alt="RJSEO Logo" class="h-16 w-auto"></a>
+            </div>
+            
+            <!-- Menu Navigasi Desktop -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300 items-center ml-auto">
+                <a href="index.html" class="hover:text-blue-400 transition">Beranda</a>
+                
+                <!-- Dropdown Layanan Desktop dengan Padding Pembatas & Transisi Aman -->
+                <div class="relative group py-2">
+                    <a href="#" class="hover:text-blue-400 transition flex items-center">
+                        Pusat Layanan <i id="desktop-chevron" class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                    </a>
+                    <!-- Penambahan pt-3 agar kursor aman saat melintas dari menu utama ke dropdown box -->
+                    <div class="absolute left-0 top-full pt-2 w-64 hidden group-hover:block z-50">
+                        <div class="bg-slate-900/95 backdrop-blur-2xl border border-slate-800 rounded-2xl shadow-2xl py-3">
+                            <a href="undangan-digital.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition font-medium">✨ Undangan Elektronik / Digital</a>
+                            <a href="landing-page.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Landing Page Profesional</a>
+                            <a href="pembuatan-aplikasi.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Pembuatan Aplikasi Kustom</a>
+                            <a href="bot-telegram.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Bot Telegram Otomatis</a>
+                            <a href="solusi-lainnya.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition border-t border-slate-800/80 mt-1 pt-2 font-medium">📁 Solusi Digital Lainnya</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="paket.html" class="text-blue-400 font-semibold transition hover:text-blue-300">Paket & Solusi</a>
+                <a href="keunggulan.html" class="hover:text-blue-400 transition">Keunggulan</a>
+                <a href="demo.html" class="hover:text-blue-400 transition">Demo & Sample</a>
+                <a href="kontak.html" class="hover:text-blue-400 transition">Kontak</a>
+            </nav>
+            
+            <!-- Tombol Hamburger Menu Mobile -->
+            <div class="flex items-center space-x-3 md:hidden ml-auto">
+                <button id="menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2.5 bg-slate-900/80 border border-slate-800 rounded-xl" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-2xl border-b border-slate-800 px-6 py-5 space-y-3 text-sm shadow-2xl">
+            <a href="index.html" class="block text-slate-300 hover:text-blue-400 py-1 transition">Beranda</a>
+            
+            <div class="border-t border-slate-800/80 pt-3 pb-1 text-slate-400 font-medium text-xs uppercase tracking-wider">Pusat Layanan Digital:</div>
+            <a href="undangan-digital.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition font-medium">&bull; ✨ Undangan Elektronik</a>
+            <a href="landing-page.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition">&bull; Landing Page Profesional</a>
+            <a href="pembuatan-aplikasi.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition">&bull; Pembuatan Aplikasi Kustom</a>
+            <a href="bot-telegram.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition">&bull; Bot Telegram Otomatis</a>
+            <a href="solusi-lainnya.html" class="block pl-3 text-slate-300 hover:text-blue-400 py-1 transition font-medium">&bull; 📁 Solusi Digital Lainnya</a>
+
+            <div class="border-t border-slate-800/80 pt-3 space-y-2">
+                <a href="paket.html" class="block text-blue-400 font-semibold py-1">Paket & Solusi</a>
+                <a href="keunggulan.html" class="block text-slate-300 hover:text-blue-400 py-1">Keunggulan</a>
+                <a href="demo.html" class="block text-slate-300 hover:text-blue-400 py-1">Demo & Sample</a>
+                <a href="kontak.html" class="block text-slate-300 hover:text-blue-400 py-1">Kontak</a>
+            </div>
+
+            <!-- Tombol Kontak Cepat di dalam Menu Mobile -->
+            <div class="border-t border-slate-800/80 pt-4 flex gap-3">
+                <a href="https://api.whatsapp.com/send/?phone=94703550968&text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-lg shadow-green-600/30">
+                    <i class="fab fa-whatsapp mr-1"></i> WhatsApp
+                </a>
+                <a href="https://t.me/rjbotxt?text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="flex-1 bg-sky-500 hover:bg-sky-600 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-lg shadow-sky-500/30">
+                    <i class="fab fa-telegram-plane mr-1"></i> Telegram
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Paket & Solusi -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wider border border-blue-500/20 mb-4 shadow-sm backdrop-blur-md">
+                    Daftar Harga & Paket
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">Pilihan Paket & Solusi</h1>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Harga disesuaikan secara fleksibel dengan tingkat kesulitan dan kebutuhan spesifik proyek Anda. Dapatkan penawaran terbaik yang bersahabat!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Paket 1: Landing Page Only -->
+                <div class="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-slate-800/80 flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Landing Page Only</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Cocok untuk profil bisnis, event, atau produk tunggal.</p>
+                        <div class="text-blue-400 font-semibold text-xs mb-6 bg-blue-500/10 py-2.5 px-3 rounded-xl text-center border border-blue-500/20">Harga Menyesuaikan Tingkat Kesulitan</div>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Desain Responsif & Modern</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Kecepatan Akses Tinggi</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Optimasi SEO Dasar</li>
+                        </ul>
+                    </div>
+                    <a href="kontak.html" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl transition text-center text-xs sm:text-sm border border-slate-700">Konsultasi Paket Ini</a>
+                </div>
+
+                <!-- Paket 2: Aplikasi Only -->
+                <div class="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-slate-800/80 flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Aplikasi Only</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Solusi pembuatan sistem aplikasi fungsional sesuai request.</p>
+                        <div class="text-blue-400 font-semibold text-xs mb-6 bg-blue-500/10 py-2.5 px-3 rounded-xl text-center border border-blue-500/20">Harga Menyesuaikan Tingkat Kesulitan</div>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Fitur Custom Sesuai Request</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Performa Stabil & Aman</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Database Terintegrasi</li>
+                        </ul>
+                    </div>
+                    <a href="kontak.html" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl transition text-center text-xs sm:text-sm border border-slate-700">Konsultasi Paket Ini</a>
+                </div>
+
+                <!-- Paket 3: Landing Page + APK (Populer) -->
+                <div class="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border-2 border-blue-500/80 relative flex flex-col justify-between shadow-2xl shadow-blue-500/15 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">Populer</span>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Landing Page + APK</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Paket lengkap penyediaan halaman web promosi dan file unduhan aplikasi.</p>
+                        <div class="text-blue-400 font-semibold text-xs mb-6 bg-blue-500/10 py-2.5 px-3 rounded-xl text-center border border-blue-500/20">Harga Menyesuaikan Tingkat Kesulitan</div>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Landing Page Download APK</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> File APK Siap Instal</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Setup Hosting & Domain</li>
+                        </ul>
+                    </div>
+                    <a href="kontak.html" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 rounded-xl transition text-center text-xs sm:text-sm shadow-lg shadow-blue-600/30">Konsultasi Paket Ini</a>
+                </div>
+
+                <!-- Paket 4: Bot Telegram -->
+                <div class="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-slate-800/80 flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Bot Telegram</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">Pembuatan bot Telegram otomatis sesuai kebutuhan spesifik Anda.</p>
+                        <div class="text-blue-400 font-semibold text-xs mb-6 bg-blue-500/10 py-2.5 px-3 rounded-xl text-center border border-blue-500/20">Harga Menyesuaikan Tingkat Kesulitan</div>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Automasi Chat / Respon Cepat</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Integrasi API / Database</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2.5"></i> Panduan Penggunaan Bot</li>
+                        </ul>
+                    </div>
+                    <a href="kontak.html" class="w-full bg-slate-800/80 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl transition text-center text-xs sm:text-sm border border-slate-700">Konsultasi Paket Ini</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating CTA WhatsApp & Telegram di Sudut Kanan Bawah -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="https://api.whatsapp.com/send/?phone=94703550968&text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-green-600/50 transition-all hover:scale-110 active:scale-95" title="Chat WhatsApp">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="https://t.me/rjbotxt?text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="bg-sky-500 hover:bg-sky-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-sky-500/50 transition-all hover:scale-110 active:scale-95" title="Chat Telegram">
+            <i class="fab fa-telegram-plane text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#02040a] border-t border-slate-800/60 py-12 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center justify-center sm:justify-start space-x-3">
+                <img src="logo.png" alt="RJSEO Logo" class="h-14 w-auto">
+                <span class="text-slate-400">&copy; 2026 RJSEO. All rights reserved.</span>
+            </div>
+            <div class="flex space-x-6 text-slate-400">
+                <a href="index.html" class="hover:text-white transition">Beranda</a>
+                <a href="undangan-digital.html" class="hover:text-white transition">Undangan</a>
+                <a href="demo.html" class="hover:text-white transition">Demo</a>
+                <a href="paket.html" class="hover:text-white transition">Paket</a>
+                <a href="kontak.html" class="hover:text-white transition">Kontak</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript untuk Tombol Hamburger Mobile -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 50 });</script>
+</body>
+</html>
