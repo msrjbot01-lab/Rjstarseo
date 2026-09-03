@@ -31,9 +31,74 @@
             background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
             background-size: 32px 32px;
         }
+        /* Menghilangkan bar atas & elemen bawaan Google Translate agar desain tetap bersih */
+        body { top: 0px !important; }
+        .goog-te-banner-frame { display: none !important; }
+        .goog-logo-link { display: none !important; }
+        .goog-te-gadget { color: transparent !important; }
+        .skiptranslate { display: none !important; }
     </style>
+
+    <!-- Script Deteksi Negara & Auto Translate Google -->
+    <script>
+    async function detectUserLanguage() {
+        try {
+            let response = await fetch('https://ipapi.co/json/');
+            let data = await response.json();
+            let country = data.country_code; // Contoh: 'ID', 'US', 'CN', dll.
+
+            let targetLang = 'en'; // Default untuk luar negeri adalah Bahasa Inggris
+
+            if (country === 'ID') {
+                targetLang = 'id'; // Indonesia tetap Bahasa Indonesia
+            } else if (country === 'CN') {
+                targetLang = 'zh-CN'; // Cina / Mandarin
+            } else {
+                targetLang = 'en'; // Amerika & negara lainnya
+            }
+
+            // Jika bahasa tujuan bukan Bahasa Indonesia, jalankan fungsi terjemahan
+            if (targetLang !== 'id') {
+                triggerGoogleTranslate(targetLang);
+            }
+        } catch (error) {
+            console.log("Gagal mendeteksi lokasi:", error);
+        }
+    }
+
+    function triggerGoogleTranslate(lang) {
+        if (!document.getElementById('google-translate-script')) {
+            var addScript = document.createElement('script');
+            addScript.id = 'google-translate-script';
+            addScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(addScript);
+        }
+
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en,zh-CN',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            let checkInterval = setInterval(function() {
+                var selectField = document.querySelector(".goog-te-combo");
+                if (selectField) {
+                    selectField.value = lang;
+                    selectField.dispatchEvent(new Event('change'));
+                    clearInterval(checkInterval);
+                }
+            }, 300);
+        };
+    }
+
+    window.addEventListener('DOMContentLoaded', detectUserLanguage);
+    </script>
 </head>
 <body class="bg-[#030712] text-slate-100 font-sans selection:bg-blue-600 selection:text-white bg-grid-pattern relative">
+
+    <!-- Elemen tersembunyi untuk proses Google Translate -->
+    <div id="google_translate_element" style="display:none;"></div>
 
     <!-- Efek Background Glow Mewah -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-tr from-blue-600/20 via-indigo-600/10 to-transparent blur-[140px] pointer-events-none rounded-full"></div>
@@ -177,7 +242,7 @@
                 </div>
             </div>
 
-            <!-- Card 3: Website Pemesanan Resto (SUDAH DIPERBAIKI) -->
+            <!-- Card 3: Website Pemesanan Resto -->
             <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
                 <div>
                     <div class="bg-slate-950/80 p-4 border-b border-slate-800/80">
@@ -202,7 +267,7 @@
                 </div>
             </div>
 
-            <!-- Card 4: Landing Page RJSEO (SUDAH DIPERBAIKI) -->
+            <!-- Card 4: Landing Page RJSEO -->
             <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
                 <div>
                     <div class="bg-slate-950/80 p-4 border-b border-slate-800/80">
