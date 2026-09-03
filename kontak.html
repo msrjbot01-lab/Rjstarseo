@@ -16,6 +16,12 @@
     <title>Kontak - RJSEO</title>
     <meta name="description" content="Hubungi RJSEO untuk konsultasi pembuatan landing page, aplikasi kustom, dan bot telegram profesional. Tim kami siap membantu Anda 24/7.">
     
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Kontak - RJSEO">
+    <meta property="og:description" content="Hubungi RJSEO untuk konsultasi pembuatan landing page, aplikasi kustom, dan bot telegram profesional. Tim kami siap membantu Anda 24/7.">
+    <meta property="og:image" content="preview-v2.png">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" href="favicon.webp">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,9 +31,74 @@
             background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
             background-size: 32px 32px;
         }
+        /* Menghilangkan bar atas & elemen bawaan Google Translate agar desain tetap bersih */
+        body { top: 0px !important; }
+        .goog-te-banner-frame { display: none !important; }
+        .goog-logo-link { display: none !important; }
+        .goog-te-gadget { color: transparent !important; }
+        .skiptranslate { display: none !important; }
     </style>
+
+    <!-- Script Deteksi Negara & Auto Translate Google -->
+    <script>
+    async function detectUserLanguage() {
+        try {
+            let response = await fetch('https://ipapi.co/json/');
+            let data = await response.json();
+            let country = data.country_code; // Contoh: 'ID', 'US', 'CN', dll.
+
+            let targetLang = 'en'; // Default untuk luar negeri adalah Bahasa Inggris
+
+            if (country === 'ID') {
+                targetLang = 'id'; // Indonesia tetap Bahasa Indonesia
+            } else if (country === 'CN') {
+                targetLang = 'zh-CN'; // Cina / Mandarin
+            } else {
+                targetLang = 'en'; // Amerika & negara lainnya
+            }
+
+            // Jika bahasa tujuan bukan Bahasa Indonesia, jalankan fungsi terjemahan
+            if (targetLang !== 'id') {
+                triggerGoogleTranslate(targetLang);
+            }
+        } catch (error) {
+            console.log("Gagal mendeteksi lokasi:", error);
+        }
+    }
+
+    function triggerGoogleTranslate(lang) {
+        if (!document.getElementById('google-translate-script')) {
+            var addScript = document.createElement('script');
+            addScript.id = 'google-translate-script';
+            addScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(addScript);
+        }
+
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en,zh-CN',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            let checkInterval = setInterval(function() {
+                var selectField = document.querySelector(".goog-te-combo");
+                if (selectField) {
+                    selectField.value = lang;
+                    selectField.dispatchEvent(new Event('change'));
+                    clearInterval(checkInterval);
+                }
+            }, 300);
+        };
+    }
+
+    window.addEventListener('DOMContentLoaded', detectUserLanguage);
+    </script>
 </head>
 <body class="bg-[#030712] text-slate-100 font-sans selection:bg-blue-600 selection:text-white bg-grid-pattern relative">
+
+    <!-- Elemen tersembunyi untuk proses Google Translate -->
+    <div id="google_translate_element" style="display:none;"></div>
 
     <!-- Efek Background Glow Mewah -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-tr from-blue-600/20 via-indigo-600/10 to-transparent blur-[140px] pointer-events-none rounded-full"></div>
@@ -43,19 +114,18 @@
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300 items-center ml-auto">
                 <a href="index.html" class="hover:text-blue-400 transition">Beranda</a>
                 
-                <!-- Dropdown Layanan Desktop dengan Padding Pembatas & Transisi Aman -->
+                <!-- Dropdown Layanan Desktop -->
                 <div class="relative group py-2">
-                    <a href="#" class="hover:text-blue-400 transition flex items-center">
-                        Pusat Layanan <i id="desktop-chevron" class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                    </a>
-                    <!-- Penambahan pt-3 agar kursor aman saat melintas dari menu utama ke dropdown box -->
-                    <div class="absolute left-0 top-full pt-2 w-64 hidden group-hover:block z-50">
+                    <button id="dropdown-btn" class="text-slate-300 hover:text-blue-400 transition flex items-center focus:outline-none">
+                        Pusat Layanan <i id="dropdown-icon" class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div id="dropdown-menu" class="absolute left-0 top-full pt-1 w-64 hidden group-hover:block z-50">
                         <div class="bg-slate-900/95 backdrop-blur-2xl border border-slate-800 rounded-2xl shadow-2xl py-3">
-                            <a href="undangan-digital.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition font-medium">✨ Undangan Elektronik / Digital</a>
-                            <a href="landing-page.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Landing Page Profesional</a>
-                            <a href="pembuatan-aplikasi.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Pembuatan Aplikasi Kustom</a>
-                            <a href="bot-telegram.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Bot Telegram Otomatis</a>
-                            <a href="solusi-lainnya.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition border-t border-slate-800/80 mt-1 pt-2 font-medium">📁 Solusi Digital Lainnya</a>
+                            <a href="undangan-digital.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition font-medium">✨ Undangan Elektronik / Digital</a>
+                            <a href="landing-page.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Landing Page Profesional</a>
+                            <a href="pembuatan-aplikasi.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Pembuatan Aplikasi Kustom</a>
+                            <a href="bot-telegram.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Bot Telegram Otomatis</a>
+                            <a href="solusi-lainnya.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition border-t border-slate-800/80 mt-1 pt-2 font-medium">📁 Solusi Digital Lainnya</a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +167,7 @@
                 <a href="https://api.whatsapp.com/send/?phone=94703550968&text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-lg shadow-green-600/30">
                     <i class="fab fa-whatsapp mr-1"></i> WhatsApp
                 </a>
-                <a href="https://t.me/rjbotxt" target="_blank" class="flex-1 bg-sky-500 hover:bg-sky-600 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-lg shadow-sky-500/30">
+                <a href="https://t.me/rjbotxt?text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="flex-1 bg-sky-500 hover:bg-sky-600 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-lg shadow-sky-500/30">
                     <i class="fab fa-telegram-plane mr-1"></i> Telegram
                 </a>
             </div>
@@ -105,7 +175,7 @@
     </header>
 
     <!-- Konten Utama Kontak -->
-    <section class="py-24 relative">
+    <section class="py-24 relative z-10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-10 sm:p-16 border border-slate-800/80 text-center relative overflow-hidden shadow-2xl" data-aos="zoom-in" data-aos-duration="800">
                 
@@ -144,7 +214,7 @@
         <a href="https://api.whatsapp.com/send/?phone=94703550968&text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-green-600/50 transition-all hover:scale-110 active:scale-95" title="Chat WhatsApp">
             <i class="fab fa-whatsapp text-2xl"></i>
         </a>
-        <a href="https://t.me/rjbotxt" target="_blank" class="bg-sky-500 hover:bg-sky-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-sky-500/50 transition-all hover:scale-110 active:scale-95" title="Chat Telegram">
+        <a href="https://t.me/rjbotxt?text=Hallo%2C%20saya%20ingin%20konsultasi%20layanan%20digital" target="_blank" class="bg-sky-500 hover:bg-sky-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-sky-500/50 transition-all hover:scale-110 active:scale-95" title="Chat Telegram">
             <i class="fab fa-telegram-plane text-2xl"></i>
         </a>
     </div>
