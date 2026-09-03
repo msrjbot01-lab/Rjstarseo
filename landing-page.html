@@ -16,6 +16,12 @@
     <title>Jasa Pembuatan Landing Page Profesional - RJSEO</title>
     <meta name="description" content="Jasa pembuatan landing page konversi tinggi dengan kecepatan akses optimal, desain responsif, dan integrasi WhatsApp profesional.">
     
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Jasa Pembuatan Landing Page Profesional - RJSEO">
+    <meta property="og:description" content="Jasa pembuatan landing page konversi tinggi dengan kecepatan akses optimal, desain responsif, dan integrasi WhatsApp profesional.">
+    <meta property="og:image" content="preview-v2.png">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" href="favicon.webp">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,9 +31,74 @@
             background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
             background-size: 32px 32px;
         }
+        /* Menghilangkan bar atas & elemen bawaan Google Translate agar desain tetap bersih */
+        body { top: 0px !important; }
+        .goog-te-banner-frame { display: none !important; }
+        .goog-logo-link { display: none !important; }
+        .goog-te-gadget { color: transparent !important; }
+        .skiptranslate { display: none !important; }
     </style>
+
+    <!-- Script Deteksi Negara & Auto Translate Google -->
+    <script>
+    async function detectUserLanguage() {
+        try {
+            let response = await fetch('https://ipapi.co/json/');
+            let data = await response.json();
+            let country = data.country_code; // Contoh: 'ID', 'US', 'CN', dll.
+
+            let targetLang = 'en'; // Default untuk luar negeri adalah Bahasa Inggris
+
+            if (country === 'ID') {
+                targetLang = 'id'; // Indonesia tetap Bahasa Indonesia
+            } else if (country === 'CN') {
+                targetLang = 'zh-CN'; // Cina / Mandarin
+            } else {
+                targetLang = 'en'; // Amerika & negara lainnya
+            }
+
+            // Jika bahasa tujuan bukan Bahasa Indonesia, jalankan fungsi terjemahan
+            if (targetLang !== 'id') {
+                triggerGoogleTranslate(targetLang);
+            }
+        } catch (error) {
+            console.log("Gagal mendeteksi lokasi:", error);
+        }
+    }
+
+    function triggerGoogleTranslate(lang) {
+        if (!document.getElementById('google-translate-script')) {
+            var addScript = document.createElement('script');
+            addScript.id = 'google-translate-script';
+            addScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.body.appendChild(addScript);
+        }
+
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en,zh-CN',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            let checkInterval = setInterval(function() {
+                var selectField = document.querySelector(".goog-te-combo");
+                if (selectField) {
+                    selectField.value = lang;
+                    selectField.dispatchEvent(new Event('change'));
+                    clearInterval(checkInterval);
+                }
+            }, 300);
+        };
+    }
+
+    window.addEventListener('DOMContentLoaded', detectUserLanguage);
+    </script>
 </head>
 <body class="bg-[#030712] text-slate-100 font-sans selection:bg-blue-600 selection:text-white bg-grid-pattern relative">
+
+    <!-- Elemen tersembunyi untuk proses Google Translate -->
+    <div id="google_translate_element" style="display:none;"></div>
 
     <!-- Efek Background Glow Mewah -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-tr from-blue-600/20 via-indigo-600/10 to-transparent blur-[140px] pointer-events-none rounded-full"></div>
@@ -45,16 +116,16 @@
                 
                 <!-- Dropdown Layanan Desktop -->
                 <div class="relative group py-2">
-                    <a href="#" class="text-blue-400 font-semibold transition flex items-center">
-                        Pusat Layanan <i id="desktop-chevron" class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                    </a>
-                    <div class="absolute left-0 top-full pt-2 w-64 hidden group-hover:block z-50">
+                    <button id="dropdown-btn" class="text-blue-400 font-semibold transition flex items-center focus:outline-none">
+                        Pusat Layanan <i id="dropdown-icon" class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div id="dropdown-menu" class="absolute left-0 top-full pt-1 w-64 hidden group-hover:block z-50">
                         <div class="bg-slate-900/95 backdrop-blur-2xl border border-slate-800 rounded-2xl shadow-2xl py-3">
-                            <a href="undangan-digital.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition font-medium">✨ Undangan Elektronik / Digital</a>
-                            <a href="landing-page.html" class="block px-4 py-2 text-blue-400 bg-blue-600/15 text-xs font-semibold">Landing Page Profesional</a>
-                            <a href="pembuatan-aplikasi.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Pembuatan Aplikasi Kustom</a>
-                            <a href="bot-telegram.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Bot Telegram Otomatis</a>
-                            <a href="solusi-lainnya.html" class="block px-4 py-2 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition border-t border-slate-800/80 mt-1 pt-2 font-medium">📁 Solusi Digital Lainnya</a>
+                            <a href="undangan-digital.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition font-medium">✨ Undangan Elektronik / Digital</a>
+                            <a href="landing-page.html" class="block px-4 py-2.5 text-blue-400 bg-blue-600/15 text-xs font-semibold transition">Landing Page Profesional</a>
+                            <a href="pembuatan-aplikasi.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Pembuatan Aplikasi Kustom</a>
+                            <a href="bot-telegram.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition">Bot Telegram Otomatis</a>
+                            <a href="solusi-lainnya.html" class="block px-4 py-2.5 text-slate-300 hover:bg-blue-600/15 hover:text-blue-400 text-xs transition border-t border-slate-800/80 mt-1 pt-2 font-medium">📁 Solusi Digital Lainnya</a>
                         </div>
                     </div>
                 </div>
